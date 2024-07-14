@@ -1,0 +1,113 @@
+.form-container 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #000 0%, #432F6A 100%);  /* Black to light purple gradient */
+}
+
+.login-title {
+font-family: 'Poppins', sans-serif;
+font-size: 3rem;
+color: #FFF;  /* White text */
+margin-bottom: 2rem;
+text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);  /* Subtle text shadow */
+}
+
+.login-form {
+display: flex;
+flex-direction: column;
+width: 300px;
+padding: 2rem;
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.1);  /* Semi-transparent white background */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  /* Soft shadow */
+}
+
+.login-form input,
+.login-form select {
+padding: 1rem;
+border: none;
+border-radius: 5px;
+background-color: rgba(0, 0, 0, 0.05);  /* Very light black background for inputs */
+color: #FFF;  /* White text */
+margin-bottom: 1rem;
+}
+
+.login-button {
+padding: 1rem 2rem;
+border: none;
+border-radius: 5px;
+background-color: #432F6A;  /* Light purple button */
+color: #FFF;  /* White text */
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.2s ease-in-out;
+}
+
+.login-button:hover {
+background-color: #6A4C9F;  /* Darker purple on hover */
+}
+
+.register-link {
+color: #FFF;  /* White text */
+margin-top: 1rem;
+text-align: center;
+}
+
+.register-link a {
+color: #FFF;  /* White text for link */
+text-decoration: underline;
+}
+
+
+.login-title {
+    font-size: 3.5rem;  /* Increased title size */
+  }
+  
+  .login-form {
+    animation: floating 3s ease-in-out infinite;  /* Added subtle floating animation */
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .social-login {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);  /* Slightly transparent white icons */
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    color: #FFF;  /* White icons on hover */
+  }
+
+  .logo {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    width: 50px;  /* Adjust width based on your logo size */
+    cursor: pointer;
+  }
+  
+  .login-title {
+    font-size: 3rem;
+    margin-top: 5rem;  /* Adjust margin based on logo size */
+  }
+  
+  .forgot-password {
+    text-align: center;
+    margin-top: 2rem;
+  }

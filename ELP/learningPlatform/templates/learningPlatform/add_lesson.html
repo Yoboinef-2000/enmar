@@ -1,0 +1,66 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+{% block title %}Add Lesson to Galaxy!{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/add_lesson.css' %}">
+{% endblock %}
+
+{% block nav %}
+{% endblock %}
+
+{% block content %}
+<section class="add-lesson">
+    <div class="container">
+        <div class="lesson-form">
+            <h1 class="title">Craft a New Lesson <i class="fas fa-rocket"></i></h1>
+            <h2>Course Selection</h2>
+            <form method="post" action="{% url 'add_lesson' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="course">Select Course <i class="fas fa-chevron-down"></i></label>
+                    <select id="course" name="course" required>
+                        <option value="" disabled selected>Choose a Course</option>
+                        {% for course in courses %}
+                            <option value="{{ course.pk }}">{{ course.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">Lesson Title (Max 255 characters)</label>
+                    <input type="text" id="title" name="title" maxlength="255" required>
+                </div>
+                <div class="form-group">
+                    <label for="video_url">YouTube Video URL (Optional)</label>
+                    <input type="url" id="video_url" name="video_url">
+                </div>
+                <div class="form-group">
+                    <label for="description">Lesson Description (Markdown Supported)</label>
+                    <textarea id="description" name="description" rows="8"></textarea>
+                    <p class="info-text">Use Markdown for formatting text, adding images, and more!</p>
+                </div>
+                <div class="form-group">
+                    <label for="resources">Upload Additional Resources (Optional)</label>
+                    <input type="file" id="resources" name="resources" multiple>
+                    <p class="info-text">Upload PDFs, documents, or images to enrich your lesson.</p>
+                </div>
+                <button type="submit" class="btn btn-primary">Launch Lesson to Students!</button>
+            </form>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <h3>Lesson Preview</h3>
+                <iframe id="lesson-preview" src="" frameborder="0" allowfullscreen></iframe>
+                <p class="info-text">Enter a YouTube URL above to see a live preview.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+
+{% block title %}{{ course.title }} - Enrolled Students{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/course_students.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/course_students.js' %}"></script>
+{% endblock %}
+
+{% block nav %}
+<header class="navigation">
+    <div class="logo">
+        <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo">
+    </div>
+    
+    <div class="nav-links">
+        <a href="{% url 'home' %}" class="nav-btn">Home</a>
+        <a href="{% url 'logout' %}" class="nav-btn">Logout</a>
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <img src="{{ user.profile.image.url }}" alt="Profile Picture" class="profile-pic">
+                <span class="username">{{ user.username }}</span>
+            </a>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="course-students">
+    <div class="container">
+        <div class="course-info">
+            <h1>{{ course.title }}</h1>
+            <p>{{ course.description }}</p>
+        </div>
+
+        <section class="students-list">
+            <h2>Students Enrolled in {{ course.title }}</h2>
+            <ul>
+                {% for enrollment in enrollments %}
+                    <li>
+                        <span>{{ enrollment.learner.username }} - Enrolled on {{ enrollment.enrolled_at }}</span>
+                        <div class="student-actions">
+                            <button class="remove-student-btn" data-student-id="{{ enrollment.learner.id }}">Remove</button>
+                            <button class="message-student-btn" data-student-id="{{ enrollment.learner.id }}">Message</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        {% if user.is_instructor %}
+        <section class="lessons-management">
+            <h2>Manage Lessons</h2>
+            <ul class="lessons">
+                {% for lesson in course.lessons.all %}
+                    <li>
+                        <a href="{% url 'lesson_detail' course.pk lesson.pk %}">
+                            Lesson {{ forloop.counter }}: {{ lesson.title }}
+                        </a>
+                        <button class="delete-lesson-btn" data-lesson-id="{{ lesson.pk }}">Delete</button>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </div>
+</section>
+
+<!-- CSRF token form -->
+<form id="csrfTokenForm" style="display: none;">
+    {% csrf_token %}
+</form>
+
+{% endblock %}

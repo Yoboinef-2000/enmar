@@ -1,0 +1,466 @@
+/* Reset and basic styles */
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Header styles */
+header {
+    background-color: #222;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-link {
+    margin-left: 2rem;
+}
+
+.enmar-logo {
+    width: 40px;
+    height: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #a950cf;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #8e44be;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 60px;
+    bottom: 20px;
+    left: 0;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.sidebar-header {
+    color: #a950cf;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: #a950cf;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.sidebar-btn:hover {
+    background-color: #8e44be;
+}
+
+.interactive-elements {
+    margin-top: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+#threejs-container {
+    width: 100%;
+    height: 200px;
+    background-color: #222;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 220px; /* Adjust to accommodate sidebar width */
+    width: calc(100% - 220px); /* Adjust for responsive layout */
+    padding: 4rem 2rem;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+#search-form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-btn {
+    padding: 0.75rem 1rem;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-btn:hover {
+    background-color: #ff3333;
+}
+
+.card-columns {
+    column-gap: 1.5rem;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.card-img-top {
+    max-height: 100px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    color: #a950cf;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.card-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Continue from previous CSS */
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #a950cf;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #8e44be;
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: #a950cf;
+    border: 1px solid #a950cf;
+}
+
+.btn-outline-primary:hover {
+    background-color: #a950cf;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #444;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #666;
+}
+
+.progress-tracker {
+    width: 20%;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.progress-bar {
+    background-color: #ff4d4d;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+#custom-search-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#custom-search-btn:hover {
+    background-color: #ff3333;
+}
+
+.course-card {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem;
+}
+
+.course-card .card-body {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.course-card .card-footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.course-card h2.card-title {
+    color: #fff;
+}
+
+.course-card p.card-text {
+    color: #ddd;
+}
+
+.course-card .btn {
+    background-color: #a950cf;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.course-card .btn:hover {
+    background-color: #8a3db6;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(17, 16, 16, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.social-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.sidebar-explore {
+    margin-top: 1rem;
+}
+
+.explore-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: rgba(169, 80, 207, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.explore-item:hover {
+    transform: translateY(-5px);
+}
+
+.explore-icon {
+    flex: 0 0 60px;
+    height: 60px;
+    margin-right: 1rem;
+}
+
+.explore-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.explore-text {
+    flex: 1;
+}
+
+.explore-text h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.explore-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+
+
+/* Style for the profile container */
+.navigation-profile .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+
+    background: linear-gradient(135deg, #6b42f4, #1b1b1b);
+    transition: background 0.3s ease;
+}
+
+.navigation-profile .profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.navigation-profile .profile:hover {
+    background: linear-gradient(135deg, #1b1b1b, #6b42f4);
+}
+
+/* Style for the profile picture */
+.navigation-profile .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.navigation-profile .profile a:hover .profile-pic {
+    transform: scale(1.1);
+}
+
+/* Style for the username */
+.navigation-profile .profile span {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navigation-profile .profile a:hover span {
+    color: #ddd;
+}
+

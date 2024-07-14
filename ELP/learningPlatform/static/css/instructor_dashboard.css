@@ -1,0 +1,287 @@
+body {
+    background: linear-gradient(to right, #000, #4e54c8);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(17, 17, 17, 0.9);
+    z-index: 1000;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: #a950cf;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #8e44be;
+}
+
+
+.logo img {
+    height: 40px;
+}
+
+.dashboard {
+    padding: 4rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-left, .dashboard-right {
+    flex: 1 1 45%;
+    padding: 2rem;
+    background: rgba(17, 17, 17, 0.8);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.instructor-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative; /* For status indicator */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-picture .status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3aa75e; /* Green for online status */
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.instructor-details {
+    flex: 1;
+}
+
+.instructor-bio {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-section {
+    margin-bottom: 2rem;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-list li {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.course-list li .course-status {
+    color: #3aa75e; /* Green for active status */
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3aa75e; /* Green on hover */
+}
+
+.btn-primary {
+    background-color: #a950cf; /* Purple for primary button */
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-tertiary {
+    background-color: rgba(50, 231, 255, 0.7); /* Darker grey for tertiary button */
+    color: #fff;
+}
+
+.action-list {
+    padding: 0;
+    list-style: none;
+}
+
+.action-list li {
+    margin-bottom: 1rem;
+}
+
+.info-text {
+    color: #ddd;
+    font-size: 0.8rem;
+}
+
+.markdown-preview {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .dashboard-left, .dashboard-right {
+        flex: 1 1 100%;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.btn-danger {
+    background-color: #ff4c4c; /* Red for danger button */
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #ff0000; /* Darker red on hover */
+}
+
+.navigation-profile .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 1rem;
+    padding: 5px 10px;
+    background: linear-gradient(135deg, #6b42f4, #1b1b1b);
+    transition: background 0.3s ease;
+}
+
+.navigation-profile .profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.navigation-profile .profile:hover {
+    background: linear-gradient(135deg, #1b1b1b, #6b42f4);
+}
+
+/* Style for the profile picture */
+.navigation-profile .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.navigation-profile .profile a:hover .profile-pic {
+    transform: scale(1.1);
+}
+
+/* Style for the username */
+.navigation-profile .profile span {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navigation-profile .profile a:hover span {
+    color: #ddd;
+}
+
+.markdown-preview {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}

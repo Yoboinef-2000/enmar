@@ -1,0 +1,29 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+{% block title %}Register{% endblock %}
+
+{% block nav %}
+<!-- Override the nav block to remove navigation links -->
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <a href="{% url 'home' %}">
+        <div class="logo-container">
+            <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo" class="logo">
+        </div>
+    </a>
+    <h1>Register</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+<link rel="stylesheet" href="{% static 'css/registerStyle.css' %}">
+{% endblock %}

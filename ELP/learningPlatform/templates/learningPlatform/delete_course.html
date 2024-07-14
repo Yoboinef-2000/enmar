@@ -1,0 +1,52 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+{% block title %}Delete a Course{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/instructor_dashboard.css' %}">
+{% endblock %}
+
+{% block nav %}
+<header>
+    <div class="logo">
+        <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo">
+    </div>
+    <nav class="navigation">
+        <a href="{% url 'home' %}" class="nav-btn">Home</a>
+        <a href="{% url 'logout' %}" class="nav-btn">Logout</a>
+        <a href="{% url 'profile' %}" class="nav-btn">{{ user.username }}</a>
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+    <div class="container">
+        <div class="dashboard-left">
+            <div class="instructor-profile">
+                <div class="profile-picture">
+                    <img src="{{ user.profile.image.url }}" alt="Profile Picture">
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="instructor-details">
+                    <h1>Welcome Back, {{ user.username }}</h1>
+                    <p class="instructor-bio">{{ user.bio }}</p>
+                    <a href="{% url 'profile' %}" class="btn btn-primary">Edit Profile</a>
+                    <a href="{% url 'change_password' %}" class="btn btn-secondary">Change Password</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-right">
+            <div class="dashboard-section">
+                <h2>Delete a Course</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-danger">Delete Course</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,164 @@
+/* Overall body styles */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    line-height: 1.6;
+    background-image: url('../images/registerBackground.jpg'); /* Update this path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;
+}
+
+/* Logo container styles */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-container .logo {
+    width: 70px;
+}
+
+/* Form container styles */
+.form-container {
+    max-width: 500px;
+    margin: 100px auto;
+    background-color: #1f1f1f; /* Darker background for form */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid #bb86fc; /* Purple border */
+}
+
+.form-container h1 {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 36px; /* Bigger font size for title */
+    color: #bb86fc; /* Purple text */
+}
+
+/* Input field styles */
+input[type=text], input[type=password], input[type=email], textarea, select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 20px 0; /* Space after each field */
+    display: inline-block;
+    border: 1px solid #3b3b3b; /* Darker border */
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #2b2b2b; /* Darker input background */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, textarea:focus, select:focus {
+    background-color: #bb86fc; /* Purple background on focus */
+    border: 1px solid #9a66e3; /* Darker purple border */
+    color: #ffffff; /* White text */
+}
+
+/* Align learner and instructor status fields to the left */
+.form-container form p:nth-child(6), .form-container form p:nth-child(7) {
+    text-align: left;
+}
+
+/* Button styles */
+button[type=submit] {
+    background-color: #bb86fc; /* Purple button */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type=submit]:hover {
+    background-color: #9a66e3; /* Darker purple on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Link styles */
+a {
+    color: #bb86fc; /* Purple link */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styles */
+ul.errorlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    color: #ff4c4c; /* Red text for errors */
+    font-size: 12px; /* Smaller font size for error messages */
+}
+
+ul.errorlist li {
+    background-color: #2b2b2b; /* Dark background for error message */
+    padding: 8px; /* Reduced padding */
+    border-radius: 8px;
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+/* Helper text styles */
+.helptext {
+    font-size: 12px;
+    color: #bbbbbb; /* Lighter text for helper text */
+    margin-top: -15px; /* Reduce space above helper text */
+    margin-bottom: 10px; /* Reduce space below helper text */
+}
+
+/* Specific styles for password helper text */
+.password-helptext {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;
+    font-size: 12px; /* Smaller font size */
+    color: #bbbbbb; /* Lighter text color */
+}
+
+.password-helptext li {
+    margin-bottom: 5px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #1f1f1f; /* Darker background for form */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative; /* Add position relative */
+}
+
+.form-container .logo-container {
+    text-align: left;
+    margin-bottom: 20px;
+    position: absolute; /* Position the logo absolutely */
+    top: 20px; /* Adjust top position as needed */
+    left: 20px; /* Adjust left position as needed */
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #bb86fc; /* Purple text */
+    text-align: center; /* Center the title */
+}
+
+/* Adjust learner and instructor status */
+.form-container .form-group:nth-child(5), /* Adjust as needed */
+.form-container .form-group:nth-child(6) {
+    text-align: left; /* Align to the left */
+    margin-left: 30px; /* Add left margin for positioning */
+}

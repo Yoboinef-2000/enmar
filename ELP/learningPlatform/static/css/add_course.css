@@ -1,0 +1,200 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #111;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.enmar-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-btn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: #a950cf;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #8e44be;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.add-course {
+    padding: 8rem 0;
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("{% static 'instructor_background.jpg' %}") repeat;
+    opacity: 0.1;
+    z-index: 1;
+    filter: blur(2px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #a950cf;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.info-text {
+    color: #ddd;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.course-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    z-index: 3;
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: #fff;
+    background-color: #a950cf;
+}
+
+.btn:hover {
+    background-color: #8e44be;
+}
+
+
+/* Style for the profile container */
+.navigation .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+
+    background: linear-gradient(135deg, #6b42f4, #1b1b1b);
+    transition: background 0.3s ease;
+}
+
+.navigation .profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.navigation .profile:hover {
+    background: linear-gradient(135deg, #1b1b1b, #6b42f4);
+}
+
+/* Style for the profile picture */
+.navigation .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.navigation .profile a:hover .profile-pic {
+    transform: scale(1.1);
+}
+
+/* Style for the username */
+.navigation .profile span {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navigation .profile a:hover span {
+    color: #ddd;
+}

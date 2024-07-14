@@ -1,0 +1,63 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+
+{% block title %}Craft Your Stellar Course, Instructor!{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/add_course.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-container">
+        <a href="{% url 'home' %}" class="logo-link">
+            <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo" class="enmar-logo">
+        </a>
+        <nav class="navigation">
+            <a href="{% url 'home' %}" class="nav-btn">Home</a>
+            <a href="{% url 'logout' %}" class="nav-btn">Logout</a>
+            <div class="profile">
+                <a href="{% url 'profile' %}">
+                    <img src="{{ user.profile.image.url }}" alt="Instructor Profile" class="profile-pic">
+                    <span>{{ user.username }}</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="add-course fade-in">
+    <div class="container">
+        <div class="background-image"></div>
+        <h1>Create your course, {{ user.username }}</h1>
+        <p class="info-text">Unleash your knowledge and design a course for your students</p>
+
+        {% comment %} <form method="POST" class="course-form" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Course Title (Max 100 Characters)</label>
+                <input type="text" id="title" name="title" maxlength="100" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Course Description</label>
+                <textarea id="description" name="description" rows="10" required></textarea>
+                <p class="info-text">Craft an engaging narrative to entice students!</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Launch Your Course!</button>
+        </form> {% endcomment %}
+    </div>
+    <div class='content-section'>
+        <form method='POST' enctype='multipart/form-data'>
+            {% csrf_token %}
+            <fieldset class='form-group'>
+                <legend class='border-bottom mb-4'>Add Course</legend>
+                {{ form.as_p }}
+            </fieldset>
+            <div class='form-group'>
+                <br/>
+                <button class='btn btn-outline-info' type='submit'>Add Course</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

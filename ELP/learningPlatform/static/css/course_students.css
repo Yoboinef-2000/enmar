@@ -1,0 +1,191 @@
+/* Your existing CSS styles */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: 60px;
+    background-color: #923af1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4a4a4a;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background-color: #6b42f4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #512dcf;
+}
+
+/* Style for the profile container */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+
+    background: linear-gradient(135deg, #6b42f4, #1b1b1b);
+    transition: background 0.3s ease;
+}
+
+.profile a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.profile:hover {
+    background: linear-gradient(135deg, #1b1b1b, #6b42f4);
+}
+
+/* Style for the profile picture */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.profile a:hover .profile-pic {
+    transform: scale(1.1);
+}
+
+/* Style for the username */
+.profile span {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.profile a:hover span {
+    color: #ddd;
+}
+
+.course-info {
+    background-color: #86ad1a;
+    padding: 20px;
+    margin-top: 100px; /* Adjust as needed */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-info h1 {
+    color: #6b42f4;
+}
+
+.students-list {
+    background-color: #8be0ffc9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.students-list h2 {
+    color: #6b42f4;
+    margin-bottom: 10px;
+}
+
+.lessons-management {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lessons-management h2 {
+    color: #6b42f4;
+    margin-bottom: 10px;
+}
+
+.lessons {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lessons li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.delete-lesson-btn {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-lesson-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Style for student actions */
+.student-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.remove-student-btn, .message-student-btn {
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-student-btn {
+    background-color: #e74c3c;
+}
+
+.remove-student-btn:hover {
+    background-color: #c0392b;
+}
+
+.message-student-btn {
+    background-color: #3498db;
+}
+
+.message-student-btn:hover {
+    background-color: #2980b9;
+}

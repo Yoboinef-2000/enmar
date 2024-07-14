@@ -1,0 +1,33 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+{% block title %}Logout{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-container">
+        <a href="{% url 'home' %}" class="logo-link">
+            <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo" class="enmar-logo">
+        </a>
+        <nav class="navigation">
+            <a href="{% url 'home' %}" class="nav-btn">Home</a>
+        </nav>
+    </div>
+</header>
+
+<section class="logout-section">
+    <div class="container">
+        <h2> {{ user.username }} You have been logged out</h2>
+        <!-- <h2>{{ user.username }}, You have been logged out</h2> -->
+        <p class="thank-you">Thank you for visiting our platform!</p>
+        <div>
+            <small>
+                <a href="{% url 'login' %}" class="login-link">Log In</a>
+            </small>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}Lesson Detail - {{ lesson.title }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/lesson_detail.css' %}">
+{% endblock %}
+
+{% block nav %}
+<header>
+    <div class="header-container">
+        <a href="{% url 'home' %}" class="logo-link">
+            <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo" class="enmar-logo">
+        </a>
+        <div class="navigation-profile">
+            <div class="navigation">
+                <a href="{% url 'home' %}" class="nav-btn">Home</a>
+                <a href="{% url 'logout' %}" class="nav-btn">Logout</a>
+                <div class="profile">
+                    <a href="{% url 'profile' %}">
+                        <img src="{{ user.profile.image.url }}" alt="User Profile" class="profile-pic">
+                        <span>{{ user.username }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="lesson-detail">
+    <div class="container">
+        <div class="lesson-content">
+            <div class="lesson-header">
+                <h1>{{ lesson.title }}</h1>
+                <div class="lesson-description">
+                    <p>{{ lesson.content }}</p>
+                </div>
+            </div>
+            {% if lesson.video_url %}
+            <div class="video-container">
+                <iframe width="560" height="315" src="{{ lesson.video_url|youtube_embed_url }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            {% endif %}
+            <div class="lesson-actions">
+                <button type="button" class="action-btn complete-btn" id="mark-completed-btn">Mark as Completed</button>
+                <a href="{% url 'next_lesson' course.pk lesson.pk %}" class="action-btn next">Next Lesson</a>
+            </div>
+        </div>
+        <div class="lesson-sidebar">
+            <h2>Lesson Description</h2>
+            <p>{{ lesson.description }}</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('mark-completed-btn').addEventListener('click', function() {
+        const btn = this;
+        fetch("{% url 'mark_completed' lesson.pk %}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'completed') {
+                btn.innerHTML = '✓ Completed';
+                btn.disabled = true;
+                btn.classList.remove('complete-btn');
+                btn.classList.add('completed-btn');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
+{% endblock %}

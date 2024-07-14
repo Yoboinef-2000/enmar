@@ -1,0 +1,9 @@
+{% extends 'learningPlatform/base.html' %}
+
+{% block title %}Enrollment Detail{% endblock %}
+
+{% block content %}
+<h1>Enrollment Detail</h1>
+<p>Course: {{ enrollment.course.title }}</p>
+<p>Enrolled on: {{ enrollment.enrolled_at }}</p>
+{% endblock %}

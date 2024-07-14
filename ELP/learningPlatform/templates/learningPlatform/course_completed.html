@@ -1,0 +1,39 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+
+{% block title %}Course Completed{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/course_completed.css' %}">
+{% endblock %}
+
+{% block nav %}
+
+{% endblock %}
+
+{% block content %}
+<section class="course-completed">
+    <div class="container">
+        <div class="congrats-box">
+            <h1>🎉 Congratulations, {{ user.username }}! 🎉</h1>
+            <p>You have successfully completed the <strong>{{ course_name }}</strong> course.</p>
+            <a href="{% url 'course_list' %}" class="action-btn">Explore more courses</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>Thank you for learning with us!</p>
+        <div class="fun-elements">
+            <span>🎓</span>
+            <span>🌟</span>
+            <span>🚀</span>
+        </div>
+    </div>
+</footer>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,40 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+
+{% block title %}Access Your Learning Galaxy{% endblock %}
+
+{% block nav %}
+<!-- Override the nav block to remove navigation links -->
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/formStyle.css' %}">
+<link rel="stylesheet" href="{% static 'css/loginStyle.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="form-container">
+  <a href="{% url 'home' %}">
+    <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Learning Platform Logo" class="logo">
+  </a>
+  <h1 class="login-title">Unlock Your Potential</h1>
+
+  <form method="post" class="login-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="login-button">Login</button>
+  </form>
+
+  <p class="register-link">New Learner? <a href="{% url 'register' %}">Begin Your Journey</a></p>
+
+  <div class="social-login">
+    <p>Or sign in with:</p>
+    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+  </div>
+
+  <p class="forgot-password">Forgot Password? <a href="#">Recover Now</a></p>
+</div>
+{% endblock %}
+

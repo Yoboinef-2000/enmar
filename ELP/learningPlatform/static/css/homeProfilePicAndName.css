@@ -1,0 +1,47 @@
+/* homeProfilePicAndName.css */
+
+/* Style for the profile container */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+
+    background: linear-gradient(135deg, #6b42f4, #1b1b1b);
+    transition: background 0.3s ease;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.profile:hover {
+    background: linear-gradient(135deg, #1b1b1b, #6b42f4);
+}
+
+/* Style for the profile picture */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.profile-link:hover .profile-pic {
+    transform: scale(1.1);
+}
+
+/* Style for the username */
+.profile span {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.profile-link:hover span {
+    color: #ddd;
+}

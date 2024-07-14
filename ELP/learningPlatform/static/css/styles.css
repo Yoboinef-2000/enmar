@@ -1,0 +1,349 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for the body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #1c1c1c;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #bb86fc;
+}
+
+.login-btn, .register-btn, .logout-btn {
+    background-color: #bb86fc;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover, .logout-btn:hover {
+    background-color: #9a66e3;
+}
+
+/* Hero section styling */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: url('../images/blackandpurple.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+    color: white;
+    min-height: 100vh;
+    margin-top: 80px; /* Adjust for fixed header */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #bb86fc;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #bb86fc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #9a66e3;
+}
+
+/* Video section styling */
+.video {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.video h2 {
+    font-size: 2.2rem;
+    color: #bb86fc;
+    margin-bottom: 20px;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+    height: auto;
+}
+
+/* Features section styling */
+.features {
+    background: url('../images/blackandpurple.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+}
+
+.features h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #bb86fc;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.feature-item {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(30% - 30px);
+    max-width: calc(30% - 30px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Testimonials section styling */
+.testimonials {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.testimonials h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #bb86fc;
+}
+
+.testimonial-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.testimonial-item {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(30% - 30px);
+    max-width: calc(30% - 30px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* About section styling */
+.about {
+    padding: 50px 20px;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #bb86fc;
+}
+
+.about p {
+    text-align: center;
+}
+
+/* FAQ section styling */
+.faq {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.faq h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #bb86fc;
+}
+
+.faq-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.faq-item {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(30% - 30px);
+    max-width: calc(30% - 30px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Signup section styling */
+.signup {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.signup h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #bb86fc;
+}
+
+.signup p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.signup form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.signup input[type="email"] {
+    padding: 10px;
+    width: calc(100% - 22px);
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.signup button {
+    background-color: #bb86fc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.signup button:hover {
+    background-color: #9a66e3;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: auto;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 10px;
+}
+
+footer .social-media img {
+    height: 30px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .feature-item, .testimonial-item, .faq-item {
+        flex: 1 1 calc(45% - 30px);
+        max-width: calc(45% - 30px);
+    }
+}

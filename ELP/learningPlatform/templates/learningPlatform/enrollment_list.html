@@ -1,0 +1,13 @@
+{% extends 'learningPlatform/base.html' %}
+
+{% block title %}My Enrollments{% endblock %}
+
+{% block content %}
+<h1>My Enrollments</h1>
+<ul>
+    {% for enrollment in enrollments %}
+        <li>{{ enrollment.course.title }} (Enrolled on {{ enrollment.enrolled_at }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

@@ -1,0 +1,89 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #111;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-link {
+    display: block; /* Display as block to separate from navigation */
+}
+
+.enmar-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-btn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: #a950cf;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #8e44be;
+}
+
+.logout-section {
+    padding: 8rem 0;
+    text-align: center; /* Center align content */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #a950cf;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.thank-you {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.login-link {
+    display: block; /* Display as block to center */
+    color: #fff;
+    text-decoration: underline;
+    margin-top: 1rem; /* Add margin for spacing */
+}
+
+.login-link:hover {
+    color: #8e44be;
+}

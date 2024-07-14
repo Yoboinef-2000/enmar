@@ -1,0 +1,51 @@
+{% extends 'learningPlatform/base.html' %}
+{% load static %}
+
+{% block title %}Profile - {{ user.username }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header-container">
+        <a href="{% url 'home' %}" class="logo-link">
+            <img src="{% static 'images/enmar_logo.jpeg' %}" alt="Enmar Logo" class="enmar-logo">
+        </a>
+        <nav class="navigation">
+            <a href="{% url 'home' %}" class="nav-btn">Home</a>
+            <a href="{% url 'logout' %}" class="nav-btn">Logout</a>
+            <div class="navigation-profile">
+                <div class="profile">
+                    <a href="{% url 'profile' %}">
+                        <img src="{{ user.profile.image.url }}" alt="User Profile" class="profile-pic">
+                        <span>{{ user.username }}</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="profile-section">
+    <div class="container">
+        <div class="profile-header">
+            <img class="profile-img" src="{{ user.profile.image.url }}" alt="Profile Picture">
+            <h2 class="profile-username">{{ user.username }}</h2>
+            <p class="profile-email">{{ user.email }}</p>
+        </div>
+        <form method="POST" enctype="multipart/form-data" class="profile-form">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="form-legend">Update Profile</legend>
+                {{ form1 }}
+                {{ form2 }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-update" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

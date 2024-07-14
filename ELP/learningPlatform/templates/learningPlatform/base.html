@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Learning Platform{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_css %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+    <link rel="icon" href="{% static 'images/enmar_logo.jpeg' %}" type="image/x-icon">
+</head>
+<body>
+    {% block nav %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Enmar. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/Enmar.edu/"><img src="{% static 'images/facebook.png' %}" alt="Facebook"></a>
+                <a href="#"><img src="{% static 'images/twitter.png' %}" alt="Twitter"></a>
+                <a href="#"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
